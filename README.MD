@@ -1,1 +1,1 @@
-<img src="./HooverEffect/images/equation.png" alt="Equation" width="400"/>
+<img src="./HooverEffect/images/showcase.gif" alt="Equation" width="400"/>
