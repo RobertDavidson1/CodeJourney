@@ -1,1 +1,1 @@
-<img src="./images/equation.png" alt="Equation" width="400"/>
+<img src="./images/showcase.gif" alt="Showcase" width="400"/>
