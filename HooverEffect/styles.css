@@ -1,25 +1,95 @@
 :root {
-    --bg-color: rgb(20,20,20)
+  --bg-color: rgb(20, 20, 20);
+  --card-color: rgb(23, 23, 23);
 }
 
 body {
-    background-color: var(--bg-color);
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-color);
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  font-family: "Inter";
+  font-weight: 900;
+  font-size: 60px;
+  color: rgb(211, 211, 211);
 }
 
 #cards {
-    display: flex;
-    flex-wrap: wrap;
-
-    width: calc(100% -20px);
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 960px;
+  width: calc(100% -20px);
+  gap: 10px;
 }
 
+#cards:hover > .card > .card-border {
+  opacity: 1;
+}
 
 .card {
-    background-color: rgba(255,255,255,0.1);
-    height: 250px;
-    width: 300px;
+  background-color: rgba(255, 255, 255, 0.05);
+  height: 260px;
+  width: 300px;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
 }
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card > .card-border,
+.card::before {
+  border-radius: inherit;
+  content: "";
+  height: 100%;
+  left: 0px;
+  opacity: 0;
+  transition: opacity 500ms;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: 2;
+  
+}
+
+.card::before {
+  background: radial-gradient(
+    800px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 255, 255, 0.06),
+    transparent 40%
+  );
+
+
+  z-index: 3;
+}
+
+.card > .card-border {
+  background: radial-gradient(
+    400px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 255, 255, 0.3),
+    transparent 40%
+  );
+  z-index: 1;
+}
+
+.card-content {
+  display: flex; /* Enables Flexbox */
+  align-items: center; /* Centers content vertically */
+  justify-content: center; /* Centers content horizontally */
+  text-align: center; /* Ensures text is centered if it wraps */
+  background-color: var(--card-color);
+  height: calc(100% - 2px);
+  width: calc(100% - 2px);
+  border-radius: inherit;
+  margin: 1px;
+  z-index: 2;
+  position: relative;
+}
+
+
