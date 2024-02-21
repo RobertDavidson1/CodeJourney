@@ -1,3 +1,5 @@
-
+## Bento Box:
+<img src="./BentoBox/images/Screenshot.png" alt="BentoScreenshot" width="400"/>
+---
 ## Hoover Effect:
-<img src="./HooverEffect/images/showcase.gif" alt="Equation" width="400"/>
+<img src="./HooverEffect/images/showcase.gif" alt="Hoover Gif" width="400"/>
