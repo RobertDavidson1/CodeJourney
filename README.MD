@@ -3,4 +3,4 @@
 
 
 ## Hoover Effect:
-<img src="./HooverEffect/images/showcase.gif" alt="Hoover Gif" width="400"/>
+<img src="./HoverEffect/images/showcase.gif" alt="Hoover Gif" width="400"/>
