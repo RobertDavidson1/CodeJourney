@@ -1,0 +1,56 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.box {
+  display: flex;
+}
+
+.full-width {
+  background-color: #0000FF; /* Replace with your desired color */
+  height: 15%; /* 1/5 of the viewport height */
+  width: 100%;
+}
+
+.middleRow {
+  height: 60%;
+}
+
+
+.bottomRow {
+  height: 40%;
+}
+
+.middleRow > .left {
+  background-color: red;
+  height: 100%;
+  width: 40%;
+}
+
+.middleRow > .right {
+  background-color: yellow;
+  width: 60%;
+  height: 100%;
+}
+
+
+.bottomRow > .left {
+  height: 100%;
+  width: 20%;
+  background-color:aliceblue
+}
+
+
+.bottomRow > .right {
+  height: 100%;
+  width: 20%;
+  background-color:black
+}
+
+.bottomRow > .text {
+  height: 100%;
+  width: 60%;
+  background-color:gray
+}
