@@ -1,56 +1,141 @@
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
+:root {
+  --background-color-dark: rgb(0, 0, 0);
+  --background-color-bright: rgb(11, 18, 37);
+  --border-color: rgb(39, 50, 64);
+  --card-background-color: rgb(20, 23, 34, 0.3);
+  --card-hover-color: rgb(24, 28, 38);
+  --grid-color: rgb(16, 23, 44);
+  --corner-radius: 10px;
 }
 
-.box {
+body {
   display: flex;
+  justify-content: center; /* Centers horizontally in the container */
+  align-items: center;
+  height: 100vh;
+  min-height: 100vh; /* Use vh (viewport height) to make the body at least as tall as the viewport */
+  margin: 0; /* Removes default margin */
+  background-image: -moz-radial-gradient(
+    circle,
+    var(--background-color-bright) 100%,
+    var(--background-color-dark) 100%
+  );
+
+  overflow: hidden;
+  z-index: -1;
 }
 
-.full-width {
-  background-color: #0000FF; /* Replace with your desired color */
-  height: 15%; /* 1/5 of the viewport height */
-  width: 100%;
+h1 {
+  font-weight: 400;
+  font-family: "Poppins";
+  font-size: 2em;
 }
 
-.middleRow {
-  height: 60%;
+.grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: repeating-linear-gradient(
+      0deg,
+      var(--grid-color),
+      var(--grid-color) 1px,
+      transparent 1px,
+      transparent 80px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      var(--grid-color),
+      var(--grid-color) 1px,
+      transparent 1px,
+      transparent 80px
+    );
+  z-index: -2;
 }
 
-
-.bottomRow {
-  height: 40%;
+.grid::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle,
+    transparent 10%,
+    var(--background-color-dark) 100%
+  );
+  pointer-events: none;
 }
 
-.middleRow > .left {
-  background-color: red;
-  height: 100%;
-  width: 40%;
+.card-container {
+  margin: none;
+  user-select: none; /* Standard syntax */
+
+  cursor: default;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 
-.middleRow > .right {
-  background-color: yellow;
-  width: 60%;
-  height: 100%;
+.canvas-container {
+  background-color: var(--card-background-color);
+  width: 500px;
+  height: 500px;
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
-
-.bottomRow > .left {
-  height: 100%;
-  width: 20%;
-  background-color:aliceblue
+#description {
+  width: 500px;
+  height: 100px;
+  background-color: var(--card-background-color);
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--corner-radius) var(--corner-radius) 0px 0px;
+  border: 1px solid var(--border-color);
 }
 
-
-.bottomRow > .right {
-  height: 100%;
-  width: 20%;
-  background-color:black
+.navigation {
+  display: flex;
+  width: 500px;
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  border-radius: 0px 0px var(--corner-radius) var(--corner-radius);
+}
+.arrow {
+  flex: 1;
+  width: 500px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
-.bottomRow > .text {
-  height: 100%;
-  width: 60%;
-  background-color:gray
+#leftArrow:hover,
+#rightArrow:hover {
+  background-color: var(--card-hover-color);
+  transition: background-color 400ms;
+}
+
+.arrow > .fa-solid {
+  color: white;
+  size: 5rem;
+}
+
+#leftArrow {
+  background-color: var(--card-background-color);
+  border-radius: 0px 0px 0px var(--corner-radius);
+  border-right: 1px solid var(--border-color);
+}
+#rightArrow {
+  background-color: var(--card-background-color);
+  border-radius: 0px 0px var(--corner-radius) 0px;
 }
