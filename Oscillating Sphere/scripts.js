@@ -1,6 +1,9 @@
 // Array to hold your animation file names
-const animations = ["js/oscillating-sphere.js", "js/test.js"];
-const descriptions = ["Oscillating Sphere ", "Test Animation"];
+const animations = [
+  "animations/oscillating-sphere.js",
+  "animations/reactive-mosaic.js",
+];
+const descriptions = ["Oscillating Sphere ", "Reactive Mosaic"];
 let currentAnimationIndex = 0;
 
 // Function to load a new p5.js animation
