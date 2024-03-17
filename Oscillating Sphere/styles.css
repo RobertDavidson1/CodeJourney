@@ -80,6 +80,10 @@ h1 {
 }
 
 .canvas-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Or specify a height, e.g., 500px */
   background-color: var(--card-background-color);
   width: 500px;
   height: 500px;
