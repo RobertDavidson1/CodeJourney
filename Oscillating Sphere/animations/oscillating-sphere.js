@@ -43,7 +43,7 @@ function waveSketch(p) {
     display() {
       let ctx = p.drawingContext;
       ctx.shadowBlur = 10;
-      ctx.shadowColor = p.color(255, 255, 255, 70);
+      ctx.shadowColor = p.color(23, 191, 253, 130);
       p.noFill();
       p.beginShape();
       for (let i = 0; i < 360; i++) {
