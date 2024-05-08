@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorting Algorithm Visualizer</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Atom One Dark Theme CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/atom-one-dark.min.css"
+    />
+    <!-- Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+    <style>
+      /* Style for the tab content container */
+      .tabcontent {
+        display: none;
+      }
+
+      .active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tab-content-container">
+      <div class="tab">
+        <button
+          class="tablinks"
+          onclick="openCode(event, 'Python')"
+          id="defaultOpen"
+        >
+          Python
+        </button>
+        <button class="tablinks" onclick="openCode(event, 'JavaScript')">
+          JavaScript
+        </button>
+      </div>
+
+      <div id="Python" class="tabcontent active">
+        <pre><code class="language-python">
+def bubbleSort(arr):
+    n = len(arr)
+    # Traverse through all array elements
+    for i in range(n):
+        swapped = False
+        # Last i elements are already in place
+        for j in range(0, n-i-1):
+            # Traverse the array from 0 to n-i-1
+            # Swap if the element found is greater
+            # than the next element
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+                swapped = True
+        if not swapped:
+            break
+
+# Driver code to test above
+if __name__ == "__main__":
+    arr = [64, 34, 25, 12, 22, 11, 90]
+    bubbleSort(arr)
+    print("Sorted array:")
+    for i in range(len(arr)):
+        print("%d" % arr[i], end=" ")
+        </code></pre>
+      </div>
+
+      <div id="JavaScript" class="tabcontent">
+        <pre><code class="language-javascript">
+// Optimized javaScript implementation
+// of Bubble sort
+// An optimized version of Bubble Sort
+function bubbleSort(arr, n) {
+    var i, j, temp;
+    var swapped;
+    for (i = 0; i < n - 1; i++) {
+        swapped = false;
+        for (j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                // Swap arr[j] and arr[j+1]
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+                swapped = true;
+            }
+        }
+        // IF no two elements were 
+        // swapped by inner loop, then break
+        if (!swapped)
+            break;
+    }
+}
+
+// Function to print an array 
+function printArray(arr, size) {
+    var i;
+    for (i = 0; i < size; i++)
+        console.log(arr[i] + " ");
+}
+
+// Driver program
+var arr = [64, 34, 25, 12, 22, 11, 90];
+var n = arr.length;
+bubbleSort(arr, n);
+console.log("Sorted array: ");
+printArray(arr, n);
+
+// This code is contributed shivanisinghss2110
+</code></pre>
+      </div>
+    </div>
+    <script>
+      hljs.highlightAll();
+
+      function openCode(evt, codeName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].classList.remove("active");
+        }
+        document.getElementById(codeName).classList.add("active");
+      }
+
+      document.getElementById("defaultOpen").click();
+    </script>
+  </body>
+</html>

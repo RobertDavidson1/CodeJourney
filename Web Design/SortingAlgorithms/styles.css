@@ -1,0 +1,25 @@
+:root {
+  --navy: rgb(40, 44, 52);
+  --yellow: rgb(255, 240, 211);
+  --dark_yellow: rgb(255, 187, 62);
+}
+
+* {
+  font-family: Poppins;
+}
+
+#algorithm-container {
+  background-color: red;
+  margin-left: 80px;
+  margin-right: 80px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#dropdown-container {
+  background-color: blue;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end; /* Align items to the start of the container, i.e., to the left */
+  font-family: "Poppins", sans-serif;
+}
